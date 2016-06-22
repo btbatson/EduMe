@@ -32,10 +32,13 @@ class ProfileController extends Controller
 
         $posts = $user->posts()->get();
 
+        $chat_members = Auth::user()->friends();
+
         return view('profile.index')
             ->with('user', $user)
             ->with('posts', $posts)
-            ->with('authUserIsFriend', Auth::user()->isFriendWith($user));
+            ->with('authUserIsFriend', Auth::user()->isFriendWith($user))
+            ->with('chat_members', $chat_members);
 
     }
 

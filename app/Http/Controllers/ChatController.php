@@ -15,10 +15,27 @@ class ChatController extends Controller
     //
     public function postMessage(Request $request)
     {
+        $chat = Chat::where('user_id', $request->input('from'))
+            ->where('friend_id', $request->input('to'))->first();
+
+        if(!$chat)
+        {
+            $chat = Chat::where('user_id', $request->input('to'))
+            ->where('friend_id', $request->input('from'))->first();
+
+            if(!$chat)
+            {
+                $chat = new chat;
+                $chat->user_id = $request->input('from');
+                $chat->friend_id = $request->input('to');
+
+                $chat->save();
+            }
+        }
 
     	$message = new Message;
         $message->message = $request->input('message');
-        $message->chat_id = $request->input('chat_id');
+        $message->chat_id = $chat->id;
     	$message->user_id = $request->input('from');
     	$message->save();
     	if(!Auth::guest())

@@ -51,7 +51,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/search', [
         'uses' => 'SearchController@getResaults',
-        'as' => 'search.resaults'
+        'as' => 'search.resaults',
+        'middleware' => 'auth'
     ]);
 
     /*
@@ -60,7 +61,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/user/{username}', [
         'uses' => 'ProfileController@getProfile',
-        'as' => 'profile.index'
+        'as' => 'profile.index',
+        'middleware' => 'auth'
     ]);
 
     Route::get('/profile/edit', [

@@ -1,5 +1,7 @@
-<div class="list-group">
+<div class="sidebar">
+	<ul>
 	@foreach($categories as $category)
-		<a href="{{route('course.category', ['id' => $category->id])}}" class="list-group-item {{ url()->current() == route('course.category', ['id' => $category->id]) ? 'active' : '' }}">{{$category->name}}</a>
+		<li class="{{ url()->current() == route('course.category', ['id' => $category->id]) ? 'active' : '' }}"><a href="{{route('course.category', ['id' => $category->id])}}">{{$category->name}}</a></li>
 	@endforeach
+	</ul>
 </div>

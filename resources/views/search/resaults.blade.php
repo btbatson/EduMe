@@ -8,7 +8,7 @@
         <p>No resaults found.</p>
     @else
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 @foreach($users as $user)
                     @include('user.userblock')
                 @endforeach

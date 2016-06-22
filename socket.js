@@ -5,16 +5,16 @@ var io = require('socket.io')(server);
 
 var Redis = require('ioredis');
 
-var redis = new Redis();
+// var redis = new Redis();
 
 users = {};
 
-redis.subscribe('test-channel');
+// redis.subscribe('test-channel');
 
-redis.on('message', function(channel, message){
-	console.log(channel);
-	console.log(message);
-});
+// redis.on('message', function(channel, message){
+// 	console.log(channel);
+// 	console.log(message);
+// });
 
 io.on('connection', function(socket){
 
@@ -37,7 +37,7 @@ io.on('connection', function(socket){
 	var options = {
 	    url: 'http://localhost/Edume/public/server/chat/message',
 	    method: 'POST',
-	    qs: {'message': msg.message, 'to': msg.to, 'from': msg.from, 'chat_id': msg.chat_id}
+	    qs: {'message': msg.message, 'to': msg.to, 'from': msg.from}
 	}
 	 
 	// Start the request
@@ -62,4 +62,6 @@ io.on('connection', function(socket){
 
 });
 
-server.listen(3000);
+server.listen(3000,function(){
+  console.log('listening on *:3000');
+});

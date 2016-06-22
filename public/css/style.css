@@ -1,115 +1,150 @@
 @font-face {
     font-family: Timber;
-    src: url(../fonts/Timber.otf);
+    src: url('../fonts/Timber.otf');
 }
 @font-face {
-    font-family: 'nexa-Light';
-    src: url(../fonts/Nexa-Light.otf);
+    font-family: NexaBold;
+    src: url('../fonts/NexaBold.otf');
 }
 @font-face {
-    font-family: 'nexa-Bold';
-    src: url(../fonts/Nexa-Bold.otf);
+    font-family: NexaLight;
+    src: url('../fonts/NexaLight.otf');
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(../fonts/Roboto-Regular.ttf);
 }
 body{
-    background-color: #f2f2f2;
-}
-.nexa-Light{
-    font-family: 'nexa-Light';
-}
-.media-object{
-	width: 40px;
-	height: 40px;
+	background-color: #f2f2f2;
 }
 
-.edu {
-    color: #0C9;
+
+/*===== Header =====*/
+header{
+
 }
-.me {
-    color: #f8a131;
-}
-.navbar-brand .logo{
-    font-size: 60px;
-    display: inline-block;
-    font-family: Timber;
-    line-height: 1;
-}
-.navbar-brand{
-	height: auto;
-}
-.navbar-default{
-	background-color: #fff;
-}
-.navbar-default .navbar-nav>li>a{
-    color: #999;
-    font-family: 'nexa-Light';
-    font-size: 21px;
-}
-.navbar-form button{
-	background-color: #f8a131;
-	color: #fff;
+header .navbar{
+	background-color: #ffffff;
+	border-radius: 0;
 	border: none;
 }
-.navbar-form button:hover{
-	background-color: #f8a131;
-	color: #fff;
+header .navbar-brand{
+	font-family: Timber;
+	font-size: 50px;
+	color: #00b990;
+	text-transform: uppercase;
+	height: auto;
+	line-height: 1;
 }
-.collapse.navbar-collapse{
-	padding: 17px 0 0 0;
+header .navbar-brand span{
+	color: #f8a131;
 }
-
-
-#loginOrRegister.row > div{
+header .nav>li>a{
+	font-family: NexaLight;
+	font-size: 18px;
+	color: #7f7f7f;
+	padding: 30px 20px;
+}
+header .nav>li.active>a,
+header .nav>li>a:focus,
+header .nav>li>a:hover{
+	color: #00b990;
+	background-color: transparent;
+}
+header .nav .left{
+	margin-left: 25px;
+}
+header .navbar-form .form-control{
+    border-color: #c2c2c2;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #cbcbcb;
+    font-family: NexaLight;
+    font-size: 16px;
+    background-image: url('../images/search.png');
+    background-repeat: no-repeat;
+    background-position: 9px 8px;
+    padding: 7px 12px 6px 32px;
+}
+header .navbar-form .form-control:focus{
+	border-color: #c2c2c2;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+header .navbar-form{
+	margin: 20px 0;
+}
+header .nav>li a.sign{
+	font-family: NexaBold;
+	font-size: 25px;
+    color: #f8a131;
+    text-transform: uppercase;
+}
+header .navbar-nav>li a.sign:focus{
+	outline: none!important;
+}
+header .modal .modal-content{
+	border-radius: 0;
+	padding: 20px 0;
+}
+header .modal .modal-content .row{
+	margin: 0;
+}
+header .modal .modal-content .row > div{
 	padding: 0 35px;
 }
-#loginOrRegister h1{
-	font-family: 'Nexa-Bold';
+header .modal .modal-content h1{
+	font-family: NexaBold;
 	font-size: 30px;
 	color: #f2ab23;
 	margin-bottom: 20px;
 }
-#loginOrRegister input{
+header .modal .modal-content input{
 	display: block;
     width: 100%;
-    font-family: 'Nexa-Light';
+    font-family: NexaLight;
     font-size: 17px;
     color: #cacaca;
-    border: 2px solid #a4a4a4;
-    border-radius: 5px;
+    border: 1px solid #a4a4a4;
+    border-radius: 4px;
     margin-bottom: 14px;
     padding: 7px 16px 5px 16px;
 
 }
-#loginOrRegister input:focus{
+header .modal .modal-content input:focus{
 	outline: none;
 	color: #00b990;
 	border-color: #00b990;
 }
-#loginOrRegister input:focus::-webkit-input-placeholder {
+header .modal .modal-content input:focus::-webkit-input-placeholder {
     color: #00b990;
 }
-#loginOrRegister input:focus:-moz-placeholder {
+header .modal .modal-content input:focus:-moz-placeholder {
     color: #00b990;
 }
-#loginOrRegister input:focus::-moz-placeholder {
+header .modal .modal-content input:focus::-moz-placeholder {
     color: #00b990;
 }
-#loginOrRegister input:focus:-ms-input-placeholder {
+header .modal .modal-content input:focus:-ms-input-placeholder {
     color: #00b990;
 }
-#loginOrRegister input[type="submit"]{
-	font-family: 'Nexa-Light';
+header .modal .modal-content input[type="submit"]{
+	font-family: NexaLight;
     font-size: 30px;
     color: #fff;
     background-color: #00b990;
     text-transform: uppercase;
     border: none;
     padding: 12px 0 7px 0;
-    border-radius: 7px;
+    border-radius: 4px;
 }
-#loginOrRegister input[type="submit"].login{
+header .modal .modal-content input[type="submit"].login{
 	background-color: #f8a131;
 }
-#loginOrRegister .social{
+header .modal .modal-content a{
+	text-decoration: none;
+}
+header .modal .modal-content .social{
 	font-family: 'Roboto-Regular';
     font-size: 16px;
     color: #fff;
@@ -118,151 +153,669 @@ body{
     display: inline-block;
     border-radius: 5px;
 }
-#loginOrRegister .social img{
+header .modal .modal-content .social img{
 	vertical-align: bottom;
 	margin-right: 5px;
 }
-#loginOrRegister .social.face{
+header .modal .modal-content .social.face{
 	background-color: #3b5998;
 	padding: 10px 17px;
 
 }
-#loginOrRegister .social.linked{
+header .modal .modal-content .social.linked{
 	background-color: #0077b5;
 	padding: 8px 13px;
 }
-#loginOrRegister .social.twitter{
+header .modal .modal-content .social.twitter{
 	background-color: #55acee;
 	padding: 15px 20px;
 }
-#loginOrRegister span.border-left{
+header .modal .modal-content span.border-left{
 	display: inline-block;
     border-left: 1px solid #ddd;
     height: 309px;
     position: absolute;
     top: 70px;
 }
-.addPost{
-	font-family: 'nexa-Light';
-	font-size: 20px;
-    background-color: #fff;
-    padding-bottom: 5px;
-    border: 1px solid #b7b7b7;
+header .navbar-nav>li a.notification{
+    padding: 27px 20px 28px 20px;
 }
-.addPost textarea{
-	font-family: 'nexa-Light';
-	font-size: 20px;
+header .navbar-nav>li .notify{
+    padding: 5px 0;
+	left: 50%;
+	right: auto;
+	text-align: center;
+	transform: translate(-50%, 0);
+	border-radius: 0;
 }
-.apost{
-    background-color: #fff;
-    padding: 10px 0;
+header .navbar-nav>li .notify .media{
+    border-bottom: 1px solid #b7b7b7;
+    padding: 5px 0;
+}
+header .navbar-nav>li .notify li:last-child .media{
+    border-bottom: none;
+    padding-bottom: 0;
+}
+header .navbar-nav>li .notify .media-object{
+	border-radius: 70%;
+	overflow: hidden;
+}
+header .navbar-nav>li .notify .media-body{
+	font-family: NexaLight;
+}
+header .navbar-nav>li .notify .media-heading{
+	font-family: NexaBold;
+    color: #7f7f7f;
     margin: 0;
 }
-.btn-default,
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active {
-    color: #f8a131;
-    font-weight: 700;
-    border-color: #f8a131;
+header .navbar-nav>li .message{
+    padding: 28px 20px 28px 20px;
 }
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-    color: #f8a131;
-    font-weight: 700;
-    border-color: #f8a131;
-    background-color: #fff;
+header .navbar-nav>li a.profile{
+    padding: 17px 20px 18px 20px;
+}
+header .navbar-nav>li a.profile img{
+	width: 45px;
+	height: 45px;
+	border-radius: 70%;
+    overflow: hidden;
+}
+header .navbar-nav>li .prof{
+	padding: 5px 0;
+	left: 50%;
+	right: auto;
+	text-align: center;
+	transform: translate(-50%, 0);
+	border-radius: 0;
+}
+header .navbar-nav>li .prof a{
+    font-family: NexaLight;
+    font-size: 16px;
+    color: #727272;
+    text-align: left;
+    padding: 5px 15px;
+}
+/*===== /Header =====*/
+
+/*===== Courses =====*/
+#courses{
+
+}
+.sidebar{
+    padding: 10px 0;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #fff;
+}
+.sidebar ul{
+	list-style-type: none;
+	padding: 0;
+}
+.sidebar ul li a{
+    display: block;
+    border-left: 4px solid transparent;
+    font-family: NexaLight;
+    font-size: 18px;
+    color: #00b990;
+    padding: 10px 25px;
+    text-decoration: none;
+}
+.sidebar ul li a:hover,
+.sidebar ul li.active a{
+	border-color: #f8a131;
+	background-color: rgba(248, 161, 49, 0.13);;
+}
+.sidebar.course ul li a:hover,
+.sidebar.course ul li.active a{
+	border-color: #00b990;
+    background-color: rgba(0,185,144,0.13);
+}
+.star-rating{
+	text-align: center;
+}
+.star-rating span {
+    color: #ed9c00;
+    font-size: 20px;
+    margin-right: 2px;
+    margin-top: 5px;
+}
+.thumbnail{
+	padding: 0;
+}
+.thumbnail .caption{
+	padding: 9px 13px;
+}
+.thumbnail .caption h3{
+	margin-top: 5px;
+}
+.thumbnail .caption h3 a{
+	font-family: NexaBold;
+	font-size: 28px;
+	color: #00c57d;
+}
+.thumbnail .caption p{
+	font-family: NexaBold;
+	font-size: 18px;
+	color: #bcbcbc;
+}
+.thumbnail .caption p.instructor{
+	color: #757575;
+}
+.thumbnail .caption p.instructor a{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.thumbnail .caption p.instructor a img{
+	width: 40px;
+	height: 40px;
+	border-radius: 70%;
+	overflow: hidden;
+}
+/*===== /Courses =====*/
+/*===== Course =====*/
+#course{
+
+}
+#course .r1{
+	margin-bottom: 20px;
+}
+#course .details{
+	padding-top: 30px;
+	text-align: center;
+}
+#course .details img{
+    width: 45px;
+    height: 45px;
+    border-radius: 70%;
+    overflow: hidden;
+}
+#course .details p{
+	font-family: NexaLight;
+	font-size: 25px;
+	color: #868686;
+}
+#course .bold{
+	font-family: NexaBold;
+	font-size: 18px;
+	color: #b4b4b4;
+}
+#course .light{
+	font-family: NexaLight;
+	font-size: 18px;
+	color: #b4b4b4;
+}
+/*===== /Course =====*/
+
+/*===== Timeline =====*/
+#timeline{
+
+}
+.avatar{
+	width: 45px;
+	height: 45px;
+	border-radius: 70%;
+	overflow: hidden;
+}
+.addPost,
+.post{
+	border: 1px solid #b7b7b7;
+	background-color: #fff;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+.addPost .header{
+    padding: 15px 0;
+    text-align: center;
+}
+.addPost .header p{
+    display: inline-block;
+    font-family: NexaLight;
+    font-size: 18px;
+    color: #737373;
+    margin: 0;
+    vertical-align: sub;
+
+}
+.addPost .header .vl{
+    width: 1px;
+    height: 58px;
+    background-color: #b7b7b7;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.addPost .form-control{
+	border-radius: 4px;
+	font-family: Nexa-Light;
+	font-size: 18px;
+	color: #5e5e5e;
+}
+.addPost .form-control:focus{
+	border-color: #00b990;
+	-webkit-box-shadow: none;
+    box-shadow: none;
+}
+.addPost button{
+	float: right;
+}
+.btn-green:focus,
+.btn-green:hover,
+.btn-green{
+    font-family: NexaBold;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00b990;
+    letter-spacing: 1px;
+    border-radius: 0px;
+    padding: 8px 18px;
+    border-color: #00b990;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
 }
 .post{
-    background-color: #fff;
-    padding: 10px 15px;
-    border: 1px solid #b7b7b7;
+	padding: 10px 0;
+	padding-bottom: 0;
 }
-.list-inline li{
+.post .media-heading a{
+    font-family: NexaBold;
+    color: #7f7f7f;
+    margin: 0;
+}
+.post .media-body>a{
+	font-family: NexaLight;
+    color: #7f7f7f;
+    margin: 0;
+}
+.post .media{
+	border-bottom: 1px solid #b7b7b7;
+	padding: 10px 0;
+}
+.post p.content{
+	font-family: NexaLight;
+	font-size: 18px;
+	color: #5e5e5e;
+	margin: 25px 0;
+}
+.post .optionBar{
+	text-align: center;
+	background-color: #efefef;
+	padding: 15px 0;
+	margin-bottom: 10px;
+}
+.post .optionBar .like a,
+.post .optionBar .comm a,
+.post .optionBar .share a{
+	font-family: NexaLight;
+	font-size: 16px;
+	color: #727272;
+}
+.post .optionBar .liked a{
+	font-family: NexaLight;
+	font-size: 16px;
+	color: #f8a131;
+}
+.comment .media-heading a{
+    font-family: NexaBold;
+    font-size: 16px;
+    color: #7f7f7f;
+    margin: 0;
+}
+.comment .media-body>p{
+	font-family: NexaLight;
+    font-size: 16px;
     color: #5e5e5e;
 }
-.post .media-body p{
-    color: #5e5e5e;
-    font-family: 'nexa-Light';
-    font-size: 17px;
+.comment .avatar{
+	width: 40px;
+	height: 40px;
 }
-.post > .media-body > p{
-    font-size: 20px;
+.post .comment .media{
+	padding: 0;
 }
-.form-control:focus {
-    border-color: #00b990;
-    outline: 0;
+.post .comment .media:last-child{
+	border-bottom: none;
+}
+
+.addComment{
+    background-color: #e9e9e9;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+.addComment .form-group{
+	margin: 0;
+}
+.addComment .form-group .form-control{
+	border-color: #00b990;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-.media-heading a{
-    color: #5e5e5e;
-}
-.nav-tabs>li>a{
-    color: #5e5e5e;
-}
-.cvsection{
-    background-color: #fff;
-    padding: 10px 15px;
+
+.chat-list{
+	width: 100%;
+	height: 80vh;
+	background-color: #fff;
     border: 1px solid #b7b7b7;
+    position: relative;
+    
+}
+.chat-list ul{
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+	height: 80vh;
+	
+}
+.chat-list ul li{
+	margin-bottom: 10px;
+	padding: 10px 15px;
+}
+.chat-list .media-heading{
+	margin-top: 12px;
+    font-family: NexaBold;
+    font-size: 14px;
+    color: #7f7f7f;
+    position: relative;
+}
+.chat-list .media-heading .status{
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    border-radius: 70%;
+}
+.chat-list .media-heading .status.online{
+	background-color: #00b990;
+}
+.chat-list .media-heading .status.offline{
+	background-color: #c5c5c5;
+}
+.mCS-green.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background-color: #00b990; }
+.mCS-green.mCSB_scrollTools .mCSB_draggerRail{ background-color: #c5c5c5; } 
+
+.openChat{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	padding: 10px 15px;
+	display: none;
+}
+.openChat.open{
+	display: block;
+}
+.openChat .avatar{
+	width: 35px;
+	height: 35px;
+}
+.chat-list .openChat .media-heading {
+    margin-top: 9px;
+    font-size: 12px;
+}
+.chat-list .openChat .media-left a{
+	display: table-cell;
+}
+.chat-list .openChat .media-left a img{
+	display: inline-block;
+}
+.chat-list .openChat .media-left a{
+	color: #0c182a;
+	font-size: 20px;
+}
+.chat-list .openChat .media-left a span{
+	margin-right: 10px;
+}
+.chat-list .openChat .messages {
+    height: 51vh;
+    position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.chat-list .openChat .messages table {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.chat-list .openChat table tr div {
     margin-bottom: 10px;
 }
-.cvsection .jumbotron{
+.chat-list .openChat .you {
+    background-color: #e9e9e9;
+    padding: 12px 20px;
+    max-width: 90%;
+    min-width: 80%;
+    display: inline-block;
+    color: #ababab;
+    border-radius: 35px;
+}
+.chat-list .openChat .me {
+    background-color: #e9e9e9;
+    color: #ababab;
+    padding: 12px 20px;
+    max-width: 90%;
+    min-width: 80%;
+    display: inline-block;
+    float: right;
+    border-radius: 35px;
+}
+.chat-list .openChat .sendMessage{
+    margin: 0px -15px -10px -15px;
+    background-color: #eff1f2;
+    padding: 10px 15px;
+}
+.chat-list .openChat .sendMessage .form-control{
+	border-radius: 20px;
+}
+.chat-list .openChat .sendMessage .form-control:focus {
+    border-color: #00b990;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.chat-list .openChat .sendMessage button{
+    border-radius: 40px;
+    padding: 6px 22px;
+    float: right;
+}
+/*===== /Timeline =====*/
+
+.cover{
+    background-image: url(../images/Rectangle-9.png);
+    background-size: 100% 254px;
+    background-repeat: no-repeat;
+    height: 300px;
+    padding: 187px 0 0 0;
+    margin-bottom: 35px;
+}
+.cover .avatar{
+    width: 120px;
+    height: 120px;
+}
+.cover .media-heading{
+    font-family: NexaBold;
+    color: #fff;
+    margin: 0;
+    font-size: 25px;
+    margin-top: 30px;
+}
+.cover .nav-tabs{
+    margin-top: 10px;
+}
+.cover .nav-tabs>li>a{
+    font-family: NexaLight;
+    color: #7f7f7f;
+    font-size: 18px;
+}
+.cover .nav-tabs>li.active>a{
+    font-family: NexaBold;
+}
+
+.cv .row{
     background-color: #fff;
-    font-family: 'nexa-Bold';
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 25px 25px;
 }
-.cvsection h1{
-    font-family: 'nexa-Bold';
+.cv h2{
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: NexaBold;
     color: #818080;
+    font-size: 35px;
 }
-.insertform{
-    background-color: #fff;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.cv p{
+    margin-top: 0;
+    font-family: NexaBold;
+    color: #a7a7a7;
 }
-h3{
-    font-family: 'nexa-Bold';
-    color: #818080;
+.cv p span{
+    font-family: NexaLight;
 }
-.select2-container{
+.cv .item{
+    margin-bottom: 40px;
+}
+.cv .item:last-child {
+    margin-bottom: 0;
+}
+.cv .item p:first-child{
+    font-size: 18px;
+}
+.cv ul{
+    list-style-type: none;
+}
+.cv ul li{
+    display: inline-block;
+    margin-right: 20px;
+    background-color: #ececec;
+    font-family: NexaBold;
+    font-size: 16px;
+    color: #a3a3a3;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+
+/* message */
+
+.left-list,
+.right-list{
     width: 100%;
-}
-.list-group{
+    height: 80vh;
     background-color: #fff;
+    border: 1px solid #b7b7b7;
+    position: relative;
+    
 }
-.list-group-item:first-child,
-.list-group-item:last-child{
-    border-radius: 0;
+.left-list ul{
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    height: 80vh;
+    
 }
-.list-group-item{
-    font-family: 'nexa-Light';
-    color: #8c8d8d;
-    border: none;
-    border-left: 3px solid transparent;
+.left-list ul li{
+    margin-bottom: 10px;
+    padding: 10px 15px;
 }
-.list-group-item.active,
-.list-group-item.active:hover,
-.list-group-item.active:focus,
-.list-group-item:hover{
-    background-color: #def6f1!important;
-    font-family: 'nexa-Light';
-    color: #8c8d8d;
-    border: none;
-    border-left: 3px solid #00b990;
+.left-list .media-heading{
+    margin-top: 12px;
+    font-family: NexaBold;
+    font-size: 14px;
+    color: #7f7f7f;
+    position: relative;
 }
-.course{
-    font-family: 'nexa-Bold';
-    color: #acacac;
+.left-list .media-heading .status{
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    border-radius: 70%;
 }
-.caption h3 a{
-    color: #0C9;
-    font-family: 'nexa-Bold';
+.left-list .media-heading .status.online{
+    background-color: #00b990;
 }
-.caption p{
-    color: #bcbcbc;
-    font-family: 'nexa-Bold';
+.left-list .media-heading .status.offline{
+    background-color: #c5c5c5;
+}
+
+.right-list .media-heading{
+    margin-top: 17px;
+    font-family: NexaBold;
+    font-size: 25px;
+    color: #7f7f7f;
+    position: relative;
+}
+.right-list .media-heading .status{
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    border-radius: 70%;
+}
+.right-list .media-heading .status.online{
+    background-color: #00b990;
+}
+.right-list .media-heading .status.offline{
+    background-color: #c5c5c5;
+}
+.right-list{
+    padding: 10px 20px;
+}
+.right-list .avatar{
+    width: 70px;
+    height: 70px;
+}
+.right-list .messages {
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.right-list .messages table {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.right-list .messages .you {
+    background-color: #e9e9e9;
+    padding: 12px 20px;
+    max-width: 90%;
+    min-width: 80%;
+    display: inline-block;
+    color: #ababab;
+    border-radius: 35px;
+    margin-bottom: 10px;
+}
+.right-list .messages .me {
+    background-color: #e9e9e9;
+    color: #ababab;
+    padding: 12px 20px;
+    max-width: 90%;
+    min-width: 80%;
+    display: inline-block;
+    float: right;
+    border-radius: 35px;
+    margin-bottom: 10px;
+}
+.right-list .sendMessage {
+    margin: 0px -20px -10px -20px;
+    background-color: #eff1f2;
+    padding: 14px 15px;
+}
+.right-list .sendMessage .form-control {
+    border-radius: 20px;
+}
+.right-list .sendMessage .form-group{
+    width: 80%;
+    display: inline-block;
+}
+.right-list .sendMessage button {
+    border-radius: 40px;
+    padding: 6px 22px;
+    float: right;
+    width: 18%;
 }
