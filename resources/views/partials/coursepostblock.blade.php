@@ -19,16 +19,19 @@
 	<div class="col-md-12">
 		<div class="row optionBar">
 			<div class="col-xs-4">
+			@if(!Auth::user()->hasLikedPost($post))
 				<div class="like">
 					<a href="{{ route('post.like', ['postId' => $post->id] )}}">
 						<i class="fa fa-heart-o" aria-hidden="true"></i> Like ({{ $post->likes->count() }})
 					</a>
 				</div>
-				<div class="liked" style="display:none">
-					<a href="#">
-						<i class="fa fa-heart" aria-hidden="true"></i> Liked
+			@else
+				<div class="liked">
+					<a href="{{ route('post.like', ['postId' => $post->id] )}}">
+						<i class="fa fa-heart" aria-hidden="true"></i> Liked ({{ $post->likes->count() }})
 					</a>
 				</div>
+			@endif
 			</div>
 			<div class="col-xs-4 comm">
 				<a href="#">
@@ -56,14 +59,42 @@
 				<h4 class="media-heading">
 					<a href="{{ route('profile.index', ['username' => $comment->user->username ? $comment->user->username : $comment->user->id])}}">{{ $comment->user->getName() }}</a>
 				</h4>
+				<a href="#">{{ $comment->created_at->diffForHumans() }}</a>
 				<p>{{ $comment->content }}</p>
-				<ul class="list-inline">
+				<!-- <ul class="list-inline">
                     <li>{{ $comment->created_at->diffForHumans() }}</li>
                     @if($comment->user->id !== Auth::user()->id)
 	                    <li><a href="{{ route('post.likeComment', ['CommentId' => $comment->id] )}}">Like</a></li>
 	                @endif
                     <li>{{ $comment->likes->count() }} {{ str_plural('like', $comment->likes->count())}}</li>
-                </ul>
+                </ul> -->
+			</div>
+			<div class="row optionBar">
+				<div class="col-xs-4">
+				@if(!Auth::user()->hasLikedComment($comment))
+					<div class="like">
+						<a href="{{ route('post.likeComment', ['commentId' => $comment->id] )}}">
+							<i class="fa fa-heart-o" aria-hidden="true"></i> Like ({{ $comment->likes->count() }})
+						</a>
+					</div>
+				@else
+					<div class="liked">
+						<a href="{{ route('post.likeComment', ['commentId' => $comment->id] )}}">
+							<i class="fa fa-heart" aria-hidden="true"></i> Liked
+						</a>
+					</div>
+				@endif
+				</div>
+				<div class="col-xs-4 comm">
+					<!-- <a href="#">
+						<i class="fa fa-comment-o" aria-hidden="true"></i> Comment
+					</a> -->
+				</div>
+				<div class="col-xs-4 share">
+					<!-- <a href="#">
+						<i class="fa fa-share-alt" aria-hidden="true"></i> Share
+					</a> -->
+				</div>
 			</div>
 		</div>
 		@endforeach

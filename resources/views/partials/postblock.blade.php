@@ -19,16 +19,19 @@
 	<div class="col-md-12">
 		<div class="row optionBar">
 			<div class="col-xs-4">
+			@if(!Auth::user()->hasLikedPost($post))
 				<div class="like">
 					<a href="{{ route('post.like', ['postId' => $post->id] )}}">
 						<i class="fa fa-heart-o" aria-hidden="true"></i> Like ({{ $post->likes->count() }})
 					</a>
 				</div>
-				<div class="liked" style="display:none">
-					<a href="#">
-						<i class="fa fa-heart" aria-hidden="true"></i> Liked
+			@else
+				<div class="liked">
+					<a href="{{ route('post.like', ['postId' => $post->id] )}}">
+						<i class="fa fa-heart" aria-hidden="true"></i> Liked ({{ $post->likes->count() }})
 					</a>
 				</div>
+			@endif
 			</div>
 			<div class="col-xs-4 comm">
 				<a href="#">
@@ -69,16 +72,19 @@
 
 			<div class="row optionBar">
 				<div class="col-xs-4">
+				@if(!Auth::user()->hasLikedComment($comment))
 					<div class="like">
-						<a href="{{ route('post.like', ['postId' => $post->id] )}}">
+						<a href="{{ route('post.likeComment', ['commentId' => $comment->id] )}}">
 							<i class="fa fa-heart-o" aria-hidden="true"></i> Like ({{ $comment->likes->count() }})
 						</a>
 					</div>
-					<div class="liked" style="display:none">
-						<a href="#">
+				@else
+					<div class="liked">
+						<a href="{{ route('post.likeComment', ['commentId' => $comment->id] )}}">
 							<i class="fa fa-heart" aria-hidden="true"></i> Liked
 						</a>
 					</div>
+				@endif
 				</div>
 				<div class="col-xs-4 comm">
 					<!-- <a href="#">

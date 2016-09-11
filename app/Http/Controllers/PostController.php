@@ -66,13 +66,15 @@ class PostController extends Controller
             abort(404);
         }
 
-        if(!Auth::user()->isFriendWith($post->user))
+        if(!Auth::user()->isFriendWith($post->user) and Auth::user()->id !== $post->user->id)
         {
             return redirect()->route('home');
         }
 
         if(Auth::user()->hasLikedPost($post))
         {
+            $like = Auth::user()->getLikedPost($post);
+            $like->delete();
             return redirect()->back();
         }
 
@@ -91,13 +93,15 @@ class PostController extends Controller
             abort(404);
         }
 
-        if(!Auth::user()->isFriendWith($comment->user))
+        if(!Auth::user()->isFriendWith($comment->user) and Auth::user()->id !== $comment->user->id)
         {
             return redirect()->route('home');
         }
 
         if(Auth::user()->hasLikedComment($comment))
         {
+            $like = Auth::user()->getLikedComment($comment);
+            $like->delete();
             return redirect()->back();
         }
 

@@ -160,9 +160,19 @@ class User extends Authenticatable
         return (bool) $post->likes()->where('user_id', $this->id)->count();
     }
 
+    public function getLikedPost(Post $post)
+    {
+        return $post->likes()->where('user_id', $this->id)->first();
+    }
+
     public function hasLikedComment(Comment $comment)
     {
         return (bool) $comment->likes()->where('user_id', $this->id)->count();
+    }
+
+    public function getLikedComment(Comment $comment)
+    {
+        return $comment->likes()->where('user_id', $this->id)->first();
     }
 
     public function hasSkill(Skill $skill)
